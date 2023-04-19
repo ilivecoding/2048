@@ -93,7 +93,11 @@ namespace _2048
             {
                 GenerateNumber();
                 UpdateLabel();
-                CheckGameOver();
+                var flg = CheckGameOver();
+                if (flg)
+                {
+                    MessageBox.Show("游戏结束！");
+                }
             }
         }
 
@@ -314,7 +318,6 @@ namespace _2048
                 }
             }
             // 所有格子都被占满且不能再移动，游戏结束
-            MessageBox.Show("游戏结束！");
             return true;
         }
     }
